@@ -35,9 +35,11 @@ else:
 # values easier to read. After that, the machine asks if the user wants to add
 # one of the already present elements in the list. The possible answers are 'yes'
 # and 'no'.
+# DMAM why not just so 'if b > 0'?
 if compound == 'yes':
     presentcompound = input('Which one? (type full name): ')
     presentRMM = input('What is the associated RMM?: ')
+    # DMAM why do you need to ask if it is already in the dictionary?
     list.insert(0, presentcompound), list.append(presentRMM)
     print('List of ingredients:'), print(list)
     conc = input('What is the desired concentration (g/ml): ')
@@ -74,6 +76,7 @@ for n in range(len(list)):
 x = float(list[1])
 y = float(list[3])
 z = float(list[2])
+#DMAM use more descriptive variable names
 # All the values needed for the calculations are assigned to the above variables
 # from the list of ingredients and turned into float() values, so the machine
 # can still use them even if they are decimal numbers without reporting any
@@ -97,7 +100,7 @@ list.remove(conc)
 # obtain the desired concentration. The following 4 lines are 'list.remove() 
 # commands needed to clear the list of ingredients for the next solution, provvided
 # the user wants to make a second one.
-answer3 = input('Do you want to make another solution?: ')
+answer3 = input('Do you want to make another solution?: ') #DMAM this should be in a while loop to avoid repretitive use of code.
 if answer3 == 'yes':
     volume2 = float(input('Great! what volume do you want to add? (in ml): '))
     c = volume2
@@ -152,3 +155,12 @@ list.remove(RMM)
 list.remove(name)
 list.remove(conc)
 print('Thank you for using me :)')
+
+'''
+# Feedback
+A program that meets the brief but doesn't show all the programming features
+1. Use mroe decriptive variable names
+2. Using a while loop will allow many compounds to be added without repeating code
+3. Use the .format() method when outputting text.
+Overall grade: B2
+'''
